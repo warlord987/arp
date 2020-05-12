@@ -60,6 +60,8 @@ import Vue from "vue";
 import { mdbRow, mdbCol, mdbCard, mdbCardTitle, mdbCardBody, mdbCardText } from 'mdbvue';
 import ApexCharts from 'apexcharts'
 import moment from 'moment';
+import { mapState } from 'vuex'
+
 
 export default Vue.extend({
   name: "result",
@@ -91,6 +93,11 @@ export default Vue.extend({
 		mdbCardBody,
     mdbCardText,
     mdbCardTitle
+  },
+  computed: {
+      ...mapState({
+          state: state => state,
+      })
   },
   methods:{
     comboCharts() {
