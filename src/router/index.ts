@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import Toasted from 'vue-toasted';
 
+Vue.use(Toasted)
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [

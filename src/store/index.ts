@@ -770,7 +770,7 @@ const actions = {
   setType ({commit}, data) {
     commit('saveType', data)
   },
-  setTask({commit}, data) {
+  setSelectedTasks({commit}, data) {
     commit('saveTask', data)
   }
 };

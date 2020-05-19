@@ -1,8 +1,9 @@
 <template>
 	<mdb-container>
-    <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave" v-bind:css="false" mode="out-in">
-      <screen1 v-if="nextPage == 0" @next="changeNextPage" @previous="previousPage"></screen1>
-      <screen2 v-if="nextPage == 1" @next="changeNextPage" @previous="previousPage"></screen2>
+    <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-bind:css="false" mode="out-in">
+      <infoPage v-if="nextPage == 0" @next="changeNextPage" @previous="previousPage"></infoPage>
+      <screen1 v-if="nextPage == 1" @next="changeNextPage" @previous="previousPage"></screen1>
+      <!-- <screen2 v-if="nextPage == 2" @next="changeNextPage" @previous="previousPage"></screen2> -->
       <screen3 v-if="nextPage == 2" @next="changeNextPage" @previous="previousPage"></screen3>
       <screen4 v-if="nextPage == 3" @next="changeNextPage" @previous="previousPage"></screen4>
       <screen5 v-if="nextPage == 4" @next="changeNextPage" @previous="previousPage"></screen5>
@@ -13,8 +14,9 @@
 <script lang="ts">
 import Vue from "vue";
 import { mdbContainer } from 'mdbvue';
+import infoPage from "@/components/infoPage.vue";
 import screen1 from "@/components/screen1.vue";
-import screen2 from "@/components/screen2.vue";
+// import screen2 from "@/components/screen2.vue";
 import screen3 from "@/components/screen3.vue";
 import screen4 from "@/components/screen4.vue";
 import screen5 from "@/components/screen5.vue";
@@ -29,8 +31,9 @@ export default Vue.extend({
   },
   components: {
     mdbContainer,
+    infoPage,
     screen1,
-    screen2,
+    // screen2,
     screen3,
     screen4,
     screen5
@@ -59,13 +62,8 @@ export default Vue.extend({
       Velocity(el, { fontSize: '1em' }, { complete: done })
     },
     leave: function (el, done) {
-      Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 350 })
-      Velocity(el, {
-        rotateZ: '45deg',
-        translateY: '30px',
-        translateX: '30px',
-        opacity: 0
-      }, { complete: done })
+      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 100 })
+      Velocity(el, { fontSize: '1em' }, { complete: done })
     }
   }
 });
@@ -75,20 +73,9 @@ export default Vue.extend({
 .row{
   height: 100%;
 }
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
 .center{
   position: absolute;
-  top: 200px
+  top: 50px
 }
 .card.card-cascade.wider .view.view-cascade {
     z-index: 2;
@@ -102,6 +89,17 @@ export default Vue.extend({
     border-radius: .25rem;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
     box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+.bold{
+  font-weight: 900;
+}
+.font24{
+  font-size: 24px;
+  font-weight: 900;
+}
+.font21{
+  font-size: 21px  !important;
+  font-weight: 500  !important;
 }
 .view {
     position: relative;

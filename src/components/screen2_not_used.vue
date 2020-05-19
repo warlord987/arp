@@ -3,10 +3,20 @@
     <mdb-col sm="7">
       <mdb-card wide class="center">
         <mdb-view gradient="peach" cascade>
-          <h2 class="card-header-title mb-3">Select are the tasks you do in this role and how much time do u spend on them indivisually?</h2>
+          <h2 class="card-header-title mb-3">Which term are u teaching?</h2>
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
-          <mdb-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. mdbIconcere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est placeat vel, natus non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum.</mdb-card-text>
+          <mdb-card-text>
+            <mdb-card-text>
+              Please enter the term you teach in.
+            </mdb-card-text>
+              <mdb-list-group>
+                <mdb-list-group-item tag="a" href="#">
+                    <div class="text-left">Please enter the term number</div>
+                    <mdb-input style="margin: 0px;" type="number" :min="1" :max="4" outline/>
+                </mdb-list-group-item>
+              </mdb-list-group>
+          </mdb-card-text>
           <a class="orange-text mt-1 d-flex">
             <h5 class="p-2" waves v-on:click="showPrevious"><mdb-icon icon="angle-double-left" />Previous</h5>
             <div class="col-7"></div>
@@ -20,7 +30,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbCardText, mdbView, mdbIcon } from 'mdbvue';
+import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbCardText, mdbView, mdbIcon, mdbListGroup, mdbListGroupItem, mdbInput } from 'mdbvue';
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   name: "screen1",
@@ -31,7 +42,10 @@ export default Vue.extend({
 		mdbCardBody,
 		mdbCardText,
 		mdbView,
-		mdbIcon
+		mdbIcon,
+    mdbListGroup,
+    mdbListGroupItem,
+    mdbInput
   },
   methods: {
     showPrevious(){
@@ -40,6 +54,11 @@ export default Vue.extend({
     showNext () {
       this.$emit('next')
     }
-  }
+  },
+  computed: {
+      ...mapState({
+          state: state => state,
+      })
+  },
 });
 </script>

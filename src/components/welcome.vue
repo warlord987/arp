@@ -2,7 +2,7 @@
   <div class="welcome">
     <div class="mainText">
       <div class="landingText">
-        <div>
+        <div class="font24">
           Are you Being paid right?
         </div>
         <div>
@@ -28,6 +28,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { mdbBtn } from "mdbvue";
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   name: "welcome",
@@ -36,7 +37,12 @@ export default Vue.extend({
   },
   components: {
     mdbBtn
-  }
+  },
+  computed: {
+      ...mapState({
+          state: state => state,
+      })
+  },
 });
 </script>
 
