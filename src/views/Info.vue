@@ -2,11 +2,10 @@
 	<mdb-container>
     <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-bind:css="false" mode="out-in">
       <infoPage v-if="nextPage == 0" @next="changeNextPage" @previous="previousPage"></infoPage>
-      <screen1 v-if="nextPage == 1" @next="changeNextPage" @previous="previousPage"></screen1>
-      <!-- <screen2 v-if="nextPage == 2" @next="changeNextPage" @previous="previousPage"></screen2> -->
-      <screen3 v-if="nextPage == 2" @next="changeNextPage" @previous="previousPage"></screen3>
-      <screen4 v-if="nextPage == 3" @next="changeNextPage" @previous="previousPage"></screen4>
-      <screen5 v-if="nextPage == 4" @next="changeNextPage" @previous="previousPage"></screen5>
+      <screen5 v-if="nextPage == 1" @next="changeNextPage" @previous="previousPage"></screen5>
+      <screen1 v-if="nextPage == 2" @next="changeNextPage" @previous="previousPage"></screen1>
+      <screen3 v-if="nextPage == 3" @next="changeNextPage" @previous="previousPage"></screen3>
+      <screen4 v-if="nextPage == 4" @next="changeNextPage" @previous="previousPage"></screen4>
     </transition>
 	</mdb-container>
 </template>
@@ -33,7 +32,6 @@ export default Vue.extend({
     mdbContainer,
     infoPage,
     screen1,
-    // screen2,
     screen3,
     screen4,
     screen5

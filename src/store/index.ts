@@ -11,7 +11,8 @@ const state = {
             name: "assess development needs of children",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -24,7 +25,8 @@ const state = {
             name: "create the required plans to meet children's development needs",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -37,7 +39,8 @@ const state = {
             name: "teach children",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/child/week',
+              calUnit: 'hours'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -50,7 +53,8 @@ const state = {
             name: "create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -63,7 +67,8 @@ const state = {
             name: "write transition statement",
             time: {
               value: '1',
-              unit: 'hours'
+              unit: 'hours/child/year',
+              calUnit: 'hours'
             },
             frequency: 'per_child_per_year',
             term: '4',
@@ -76,7 +81,8 @@ const state = {
             name: "discuss transition statement with parent",
             time: {
               value: '15',
-              unit: 'minutes'
+              unit: 'minutes/child/year',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_year',
             term: '4',
@@ -89,7 +95,8 @@ const state = {
             name: "check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '30',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -102,7 +109,8 @@ const state = {
             name: "communicate with families (in person)",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -115,7 +123,8 @@ const state = {
             name: "communicate with families (electronic)",
             time: {
               value: '30',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -128,7 +137,8 @@ const state = {
             name: "document children's development including portfolios and individual progress records",
             time: {
               value: '10',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -140,10 +150,11 @@ const state = {
         {
             name: "review and plan according to the early childhood guidelines and curriculum",
             time: {
-              value: '2',
-              unit: 'hours'
+              value: '1',
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
-            frequency: 'per_fortnight',
+            frequency: 'per_week',
             term: '1, 2, 3, 4',
             practice: '1',
             principle: '5',
@@ -154,7 +165,8 @@ const state = {
             name: "participate in professional development",
             time: {
               value: '20',
-              unit: 'hours'
+              unit: 'hours/year',
+              calUnit: 'hours'
             },
             frequency: 'per_year',
             term: '1, 2, 3, 4',
@@ -171,7 +183,8 @@ const state = {
             name: "assess development needs of children",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -184,7 +197,8 @@ const state = {
             name: "create the required plans to meet children's development needs",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -197,7 +211,8 @@ const state = {
             name: "teach children",
             time: {
               value: '30',
-              unit: 'hours'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -210,7 +225,8 @@ const state = {
             name: "create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -223,7 +239,8 @@ const state = {
             name: "communicate with families",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -236,7 +253,8 @@ const state = {
             name: "document children's development including portfolios and individual progress records",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -249,7 +267,8 @@ const state = {
             name: "review and plan according to the early childhood guidelines and curriculum",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -262,7 +281,8 @@ const state = {
             name: "participate in professional development",
             time: {
               value: '20',
-              unit: 'hours'
+              unit: 'hours',
+              calUnit: 'hours/year'
             },
             frequency: 'per_year',
             term: '1, 2, 3, 4',
@@ -283,7 +303,8 @@ const state = {
             name: "mentor other educators",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -295,7 +316,8 @@ const state = {
             name: "observe interactions of educators with children",
             time: {
               value: '30',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -307,7 +329,8 @@ const state = {
             name: "identify and participate in professional development opportunities",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/term',
+              calUnit: 'hours'
             },
             frequency: 'per_term',
             term: '1, 2, 3, 4',
@@ -318,10 +341,11 @@ const state = {
           },          {
             name: "lead reflective discussions about practice",
             time: {
-              value: '1',
-              unit: 'hours'
+              value: '0.5',
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
-            frequency: 'per_fortnight',
+            frequency: 'per_week',
             term: '1, 2, 3, 4',
             practice: '',
             principle: '5',
@@ -340,7 +364,8 @@ const state = {
             name: "deliver curriculum to children individually or in small groups under the direction of the teacher or director",
             time: {
               value: '5',
-              unit: 'hours'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -353,7 +378,8 @@ const state = {
             name: "perform administrative duties such as finances and records management",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -366,7 +392,8 @@ const state = {
             name: "organise resources for activities within the safety guidelines under the direction of the teacher",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -379,7 +406,8 @@ const state = {
             name: "discuss program implementation and evaluation with the teacher",
             time: {
               value: '30',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -392,7 +420,8 @@ const state = {
             name: "help organise special events and children's work displays",
             time: {
               value: '2',
-              unit: 'hours'
+              unit: 'hours/term',
+              calUnit: 'hours'
             },
             frequency: 'per_term',
             term: '1, 2, 3, 4',
@@ -409,7 +438,8 @@ const state = {
             name: "assess development needs of children",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_day',
             term: 'weekday',
@@ -422,7 +452,8 @@ const state = {
             name: "create the required plans to meet children's development needs",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_day',
             term: 'weekday',
@@ -434,10 +465,11 @@ const state = {
           {
             name: "provide experiences to support children's play and learning",
             time: {
-              value: '4',
-              unit: 'houra'
+              value: '8',
+              unit: 'hours/day',
+              calUnit: 'hours'
             },
-            frequency: 'per_day_50%',
+            frequency: 'per_day',
             term: 'weekday',
             practice: '4',
             principle: '3',
@@ -448,7 +480,8 @@ const state = {
             name: "create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_day',
             term: 'weekday',
@@ -461,7 +494,8 @@ const state = {
             name: "check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '10',
-              unit: 'minutes'
+              unit: 'minutes/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_day',
             term: 'weekday',
@@ -474,7 +508,8 @@ const state = {
             name: "communicate with families (in person)",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_day',
             term: 'weekday',
@@ -486,10 +521,11 @@ const state = {
           {
             name: "provide care for babies and toddlers",
             time: {
-              value: '2',
-              unit: 'hours'
+              value: '4',
+              unit: 'hours/day',
+              calUnit: 'hours'
             },
-            frequency: 'per_day_40%',
+            frequency: 'per_day',
             term: 'weekday',
             practice: '1',
             principle: '2',
@@ -500,7 +536,8 @@ const state = {
             name: "document children's development including portfolios and individual progress records",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_day',
             term: 'weekday',
@@ -512,10 +549,11 @@ const state = {
           {
             name: "review and plan according to the early childhood guidelines and curriculum",
             time: {
-              value: '2',
-              unit: 'hours'
+              value: '1',
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
-            frequency: 'per_fortnight',
+            frequency: 'per_week',
             term: 'weekday',
             practice: '1',
             principle: '5',
@@ -526,7 +564,8 @@ const state = {
             name: "participate in professional development",
             time: {
               value: '10',
-              unit: 'hours'
+              unit: 'hours/year',
+              calUnit: 'hours'
             },
             frequency: 'per_year',
             term: 'weekday',
@@ -547,7 +586,8 @@ const state = {
             name: "assess development needs of children",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/year',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -560,7 +600,8 @@ const state = {
             name: "create the required plans to meet children's development needs",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -573,7 +614,8 @@ const state = {
             name: "teach children",
             time: {
               value: '1',
-              unit: 'hour'
+              unit: 'hours/child/week',
+              calUnit: 'hours'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -586,7 +628,8 @@ const state = {
             name: "create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -599,7 +642,8 @@ const state = {
             name: "check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '15',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -612,7 +656,8 @@ const state = {
             name: "communicate with families (in person)",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -625,7 +670,8 @@ const state = {
             name: "communicate with families (electronic)",
             time: {
               value: '30',
-              unit: 'minutes'
+              unit: 'minutes/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_week',
             term: '1, 2, 3, 4',
@@ -638,7 +684,8 @@ const state = {
             name: "document children's development including portfolios and individual progress records",
             time: {
               value: '10',
-              unit: 'minutes'
+              unit: 'minutes/child/week',
+              calUnit: 'minutes'
             },
             frequency: 'per_child_per_week',
             term: '1, 2, 3, 4',
@@ -650,10 +697,11 @@ const state = {
           {
             name: "review and plan according to the early childhood guidelines and curriculum",
             time: {
-              value: '2',
-              unit: 'hours'
+              value: '1',
+              unit: 'hours/week',
+              calUnit: 'hours'
             },
-            frequency: 'per_fortnight',
+            frequency: 'per_week',
             term: '1, 2, 3, 4',
             practice: '1',
             principle: '5',
@@ -664,7 +712,8 @@ const state = {
             name: "participate in professional development",
             time: {
               value: '10',
-              unit: 'hours'
+              unit: 'hours/year',
+              calUnit: 'hours'
             },
             frequency: 'per_year',
             term: '1, 2, 3, 4',
@@ -684,10 +733,11 @@ const state = {
           {
             name: "provide care for babies and toddlers",
             time: {
-              value: '4',
-              unit: 'hours'
+              value: '5.2',
+              unit: 'hours/day',
+              calUnit: 'hours'
             },
-            frequency: 'per_day_70%',
+            frequency: 'per_day',
             term: 'weekday',
             practice: '4',
             principle: '1',
@@ -698,7 +748,8 @@ const state = {
             name: "perform administrative duties such as filling out accident/incident reports",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_day',
             term: 'weekday',
@@ -711,7 +762,8 @@ const state = {
             name: "organise resources for activities within the safety guidelines under the direction of the teacher",
             time: {
               value: '5',
-              unit: 'minutes'
+              unit: 'minutes/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_day',
             term: 'weekday',
@@ -723,10 +775,11 @@ const state = {
           {
             name: "provide experiences to support children's play and learning",
             time: {
-              value: '1',
-              unit: 'hour'
+              value: '1.8',
+              unit: 'hours/day',
+              calUnit: 'hours'
             },
-            frequency: 'per_day_20%',
+            frequency: 'per_day',
             term: 'weekday',
             practice: '1',
             principle: '5',
@@ -737,7 +790,8 @@ const state = {
             name: "help organise children's work displays",
             time: {
               value: '15',
-              unit: 'minutes'
+              unit: 'minutes/day',
+              calUnit: 'minutes'
             },
             frequency: 'per_day',
             term: 'weekday',
@@ -753,11 +807,12 @@ const state = {
   answers: {
     role: "",
     type: "",
+    students: 0,
     tasks: [
       {
         name: "",
         timeValue: 0,
-        students: 0
+        unit: ""
       }
     ],
   }
@@ -772,6 +827,9 @@ const actions = {
   },
   setSelectedTasks({commit}, data) {
     commit('saveTask', data)
+  },
+  setStudents({commit}, data) {
+    commit('saveStudent', data)
   }
 };
 
@@ -784,6 +842,9 @@ const mutations = {
   },
   saveTask(state, data) {
     state.answers.tasks = data
+  },
+  saveStudent(state, data) {
+    state.answers.students = data
   }
 };
 

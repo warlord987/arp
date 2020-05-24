@@ -11,9 +11,13 @@
               From the list below please the no:of hours you spend for every task.
             </mdb-card-text>
               <mdb-list-group>
-                <mdb-list-group-item tag="a" href="#" v-for="task in state['answers']['tasks']" :key="task.name">
-                    <div class="text-left">{{task.name}}</div>
-                    <mdb-input style="margin: 0px;" type="number" :min="0" :max="10" outline/>
+                <mdb-list-group-item tag="a" href="#" v-for="task in tasks" :key="task.name">
+                    <div class="col-8 text-left">{{task.name}}</div>
+                    <div class="col-4">
+                      <span>
+                        <mdb-input class="col-12" v-model="task.timeValue"  style="margin: 0px; padding: 0px" type="number" :min="0" :max="10" outline/>&nbsp;{{task.unit}}
+                      </span>
+                    </div>
                 </mdb-list-group-item>
               </mdb-list-group>
           </mdb-card-text>
@@ -30,7 +34,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbCardText, mdbView, mdbIcon, mdbListGroup, mdbListGroupItem, mdbInput } from 'mdbvue';
 
 export default Vue.extend({
@@ -48,10 +52,12 @@ export default Vue.extend({
     mdbInput
   },
   methods: {
+    ...mapActions(['setSelectedTasks']),
     showPrevious(){
       this.$emit('previous')
     },
     showNext () {
+      this.setSelectedTasks(this.tasks)
       this.$emit('next')
     }
   },
@@ -60,5 +66,13 @@ export default Vue.extend({
           state: state => state,
       })
   },
+  data () {
+    return {
+      tasks: []
+    }
+  },
+  mounted(){
+    this.tasks = this.state['answers']['tasks']
+  }
 });
 </script>

@@ -64,7 +64,7 @@ export default Vue.extend({
       this.tasks.push({
         name: task,
         timeValue: 0,
-        students: 0
+        unit: this.taskUnit[task]
       })
     }
   },
@@ -72,7 +72,8 @@ export default Vue.extend({
     return {
       tasks: [],
       selectedTask: {},
-      tasksToShow: []
+      tasksToShow: [],
+      taskUnit: {}
     }
   },
   computed: {
@@ -84,6 +85,7 @@ export default Vue.extend({
     this.tasksToShow = this.state[this.state.answers.role]['type'][this.state.answers.type]['tasks']
     this.tasksToShow.map(task => {
       this.selectedTask[task.name] = false
+      this.taskUnit[task.name] = task.time.unit
     })
   }
 });

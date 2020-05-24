@@ -236,11 +236,11 @@ export default Vue.extend({
     pieChart () {
       const options = {
         series: [44, 55, 13, 43, 22],
+        labels: ['Task A', 'Task B', 'Task C', 'Task D', 'Task E'],
         chart: {
           width: 380,
           type: 'pie',
         },
-        labels: ['Task A', 'Task B', 'Task C', 'Task D', 'Task E'],
         responsive: [{
           breakpoint: 480,
           options: {
@@ -260,15 +260,11 @@ export default Vue.extend({
       const options = {
           series: [{
           name: 'Expected hours',
-          data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5,
-            3.9, 3.5, 3
-          ]
+          data: [0.4, 0.65, 0.76]
         },
         {
           name: 'Actual Hours',
-          data: [-0.8, -1.05, -1.06, -1.18, -1.4, -2.2, -2.85, -3.7, -3.96, -4.22, -4.3, -4.4,
-            -4.1, -4, -4.1, -3.4, -3.1, -2.8
-          ]
+          data: [-0.4, -0.65, -0.76]
         }
         ],
           chart: {
@@ -281,7 +277,6 @@ export default Vue.extend({
           bar: {
             horizontal: true,
             barHeight: '80%',
-        
           },
         },
         dataLabels: {
@@ -303,7 +298,7 @@ export default Vue.extend({
           min: -5,
           max: 5,
           title: {
-            // text: 'Age',
+            text: 'Selected Tasks',
           },
         },
         tooltip: {
@@ -315,7 +310,7 @@ export default Vue.extend({
           },
           y: {
             formatter: function (val) {
-              return Math.abs(val) + "%"
+              return Math.abs(val)
             }
           }
         },
@@ -323,17 +318,9 @@ export default Vue.extend({
           text: 'Expected vs actual hours'
         },
         xaxis: {
-          categories: ['85+', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
-            '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9',
-            '0-4'
-          ],
+          categories: ['task 1', 'task 2', 'task 3'],
           title: {
-            text: 'Percent'
-          },
-          labels: {
-            formatter: function (val) {
-              return Math.abs(Math.round(val)) + "%"
-            }
+            text: 'Total Calculated minutes/year'
           }
         },
         };

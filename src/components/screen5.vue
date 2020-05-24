@@ -7,7 +7,7 @@
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
           <mdb-card-text class="font21">
-              <mdb-input style="margin: 0px;" type="number" :min="0" :max="10" outline/>
+              <mdb-input v-model="noOfStudnets" style="margin: 0px;" type="number" :min="0" :max="10" outline/>
           </mdb-card-text>
           <a class="orange-text mt-1 d-flex">
             <h5 class="p-2" waves v-on:click="showPrevious"><mdb-icon icon="angle-double-left" />Previous</h5>
@@ -23,7 +23,7 @@
 <script lang="ts">
 import Vue from "vue";
 import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbCardText, mdbView, mdbIcon, mdbInput } from 'mdbvue';
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default Vue.extend({
   name: "screen1",
@@ -38,10 +38,12 @@ export default Vue.extend({
     mdbInput
   },
   methods: {
+    ...mapActions(['setStudents']),
     showPrevious(){
       this.$emit('previous')
     },
     showNext () {
+      this.setStudents(this.noOfStudnets)
       this.$emit('next')
     }
   },
@@ -50,5 +52,10 @@ export default Vue.extend({
           state: state => state,
       })
   },
+  data () {
+    return {
+      noOfStudnets: 0
+    }
+  }
 });
 </script>
