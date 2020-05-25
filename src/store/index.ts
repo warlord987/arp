@@ -281,8 +281,8 @@ const state = {
             name: "participate in professional development",
             time: {
               value: '20',
-              unit: 'hours',
-              calUnit: 'hours/year'
+              unit: 'hours/year',
+              calUnit: 'hours'
             },
             frequency: 'per_year',
             term: '1, 2, 3, 4',
