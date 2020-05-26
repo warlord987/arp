@@ -1,6 +1,6 @@
 <template>
   <mdb-row class="justify-content-md-center align-items-center">
-    <mdb-col sm="7">
+    <mdb-col sm="12">
       <mdb-card wide class="center">
         <mdb-view gradient="peach" cascade>
           <h2 class="card-header-title mb-3 font24">Wat is your role?</h2>

@@ -20,7 +20,6 @@
           <span>About</span>
         </span>
       </div>
-      footer
     </div>
   </div>
 </template>

@@ -1,18 +1,18 @@
 <template>
   <mdb-row class="justify-content-md-center align-items-center">
-    <mdb-col sm="7">
+    <mdb-col sm="12">
       <mdb-card wide class="center">
         <mdb-view gradient="peach" cascade>
-          <h2 class="card-header-title mb-3 font24">Select are the tasks you do in this role?</h2>
+          <h2 class="card-header-title mb-3 font24">Select the tasks you do in this role?</h2>
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
           <mdb-card-text class="font21">
             <mdb-card-text>
-              From the list below please select all the tasks you perform in the role.
+              From the list below please un-select all the tasks you dont perform in the role.
             </mdb-card-text>
               <mdb-list-group>
                 <mdb-list-group-item action v-for="task in tasksToShow" :key="task.name" :active="selectedTask[task.name]">
-                  <div class="text-left col" v-on:click="selectTask(task.name)" >{{task.name}}</div>
+                  <div class="text-left col" v-on:click="selectTask(task.name, task.time.value)" >{{task.name}}</div>
                 </mdb-list-group-item>
               </mdb-list-group>
           </mdb-card-text>
@@ -58,14 +58,22 @@ export default Vue.extend({
         this.$toasted.show('Please select atleast one task to proceed').goAway(1500)
       }
     },
-    selectTask (task) {
-      this.selectedTask[task] = true
-      this.$forceUpdate();
-      this.tasks.push({
-        name: task,
-        timeValue: 0,
-        unit: this.taskUnit[task]
-      })
+    selectTask (task, value) {
+      if(!this.selectedTask[task]){
+        this.selectedTask[task] = true
+        this.$forceUpdate();
+        this.tasks.push({
+          name: task,
+          timeValue: value,
+          unit: this.taskUnit[task]
+        })
+      } else {
+        this.selectedTask[task] = false
+        this.$forceUpdate();
+        const taskToRemove = this.tasks.map((task) => task.name).indexOf(task)
+        this.tasks.splice(taskToRemove, 1)
+      }
+      console.log(this.tasks)
     }
   },
   data () {
@@ -85,6 +93,7 @@ export default Vue.extend({
     this.tasksToShow = this.state[this.state.answers.role]['type'][this.state.answers.type]['tasks']
     this.tasksToShow.map(task => {
       this.selectedTask[task.name] = false
+      this.selectTask(task.name, task.time.value)
       this.taskUnit[task.name] = task.time.unit
     })
   }

@@ -1,21 +1,21 @@
 <template>
   <mdb-row class="justify-content-md-center align-items-center">
-    <mdb-col sm="7">
+    <mdb-col sm="12">
       <mdb-card wide class="center">
         <mdb-view gradient="peach" cascade>
-          <h2 class="card-header-title mb-3 font24">How much time do u spend on the tasks?</h2>
+          <h2 class="card-header-title mb-3 font24">How much time do you spend on the tasks?</h2>
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
           <mdb-card-text class="font21">
             <mdb-card-text>
-              From the list below please the no:of hours you spend for every task.
+              From the list below please enter the no:of hours you spend for every task.
             </mdb-card-text>
               <mdb-list-group>
                 <mdb-list-group-item tag="a" href="#" v-for="task in tasks" :key="task.name">
                     <div class="col-8 text-left">{{task.name}}</div>
                     <div class="col-4">
                       <span>
-                        <mdb-input class="col-12" v-model="task.timeValue"  style="margin: 0px; padding: 0px" type="number" :min="0" outline/>&nbsp;{{task.unit}}
+                        <mdb-input class="col-12" v-model="task.timeValue"  style="margin: 0px; padding: 0px" type="number" :min="1" outline/>&nbsp;{{task.unit}}
                       </span>
                     </div>
                 </mdb-list-group-item>

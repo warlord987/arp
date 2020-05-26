@@ -1,10 +1,10 @@
 <template>
   <div>
-      <!-- <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
+      <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
         <mdb-col sm="12">
           <mdb-card>
             <mdb-card-body>
-              <mdb-card-title>Card title</mdb-card-title>
+              <mdb-card-title>NQS chart for actual values</mdb-card-title>
               <hr/>
               <mdb-card-text>
                 <div id="combo"></div>
@@ -12,7 +12,7 @@
             </mdb-card-body>
           </mdb-card>
         </mdb-col>
-      </mdb-row> -->
+      </mdb-row>
       <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
         <mdb-col sm="6">
           <mdb-card>
@@ -38,7 +38,7 @@
         </mdb-col>
       </mdb-row>
       <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
-        <mdb-col sm="10">
+        <mdb-col sm="12">
           <mdb-card>
             <mdb-card-body>
               <mdb-card-title>Expected vs actual minutes</mdb-card-title>
@@ -53,7 +53,7 @@
         </mdb-col>
       </mdb-row>
       <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
-        <mdb-col sm="10">
+        <mdb-col sm="12">
           <mdb-card>
             <mdb-card-body >
               <mdb-card-title>Work done through out the year</mdb-card-title>
@@ -115,129 +115,156 @@ export default Vue.extend({
           state: state => state,
       })
   },
-  methods:{
+  methods: {
+    
     comboCharts() {
-        const options = {
-            series: [{
-            name: 'Website Blog',
-            type: 'column',
-            data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
-          }, {
-            name: 'Social Media',
-            type: 'line',
-            data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
-          }],
-            chart: {
-            height: 350,
-            type: 'line',
-          },
-          stroke: {
-            width: [0, 4]
-          },
-          title: {
-            text: 'Traffic Sources'
-          },
-          dataLabels: {
-            enabled: true,
-            enabledOnSeries: [1]
-          },
-          labels: ['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '06 Jan 2001', '07 Jan 2001', '08 Jan 2001', '09 Jan 2001', '10 Jan 2001', '11 Jan 2001', '12 Jan 2001'],
-          xaxis: {
-            type: 'datetime'
-          },
-          yaxis: [{
-            title: {
-              text: 'Website Blog',
-            },  
-          }, {
-            opposite: true,
-            title: {
-              text: 'Social Media'
+        const result = new Array(this.selectedTasks.length).fill(null).map(() => ({
+            name: "",
+            data: new Array(7).fill(0)
+          }));
+        for (let index = 1; index <= 7; index++) {
+          for (let taskIndex = 0; taskIndex < this.selectedTasks.length; taskIndex++) {
+            const element = this.selectedTasks[taskIndex];
+            result[taskIndex].name = element.name
+            if(element.nqs == index){
+              result[taskIndex].data[index-1] = element.actualTime
             }
-          }]
+          }
+        }
+
+        const options = {
+          series: [
+              ...result
+            ],
+          chart: {
+            type: 'bar',
+            height: 350,
+            stacked: true,
+            toolbar: {
+              show: true
+            },
+            zoom: {
+              enabled: true
+            }
+          },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0
+              }
+            }
+          }],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            },
+          },
+          xaxis: {
+            type: 'categories',
+            categories: [1,2,3,4,5,6,7],
+          },
+          fill: {
+            opacity: 1
+          }
         };
         const chart = new ApexCharts(document.querySelector("#combo"), options);
         chart.render();
     },
     timeLine() {
+      const term1 = {
+        x: 'Term 1',
+        y: [
+          new Date('2020-02-03').getTime(),
+          new Date('2020-04-09').getTime()
+        ],
+        fillColor: '#008FFB'
+      }
+      const term2 = {
+        x: 'Term 2',
+        y: [
+          new Date('2020-04-27').getTime(),
+          new Date('2020-07-03').getTime()
+        ],
+        fillColor: '#00E396'
+      }
+      const term3 = {
+        x: 'Term 3',
+        y: [
+          new Date('2020-07-20').getTime(),
+          new Date('2020-09-25').getTime()
+        ],
+        fillColor: '#775DD0'
+      }
+      const term4 = {
+        x: 'Term 4',
+        y: [
+          new Date('2020-10-12').getTime(),
+          new Date('2020-12-18').getTime()
+        ],
+        fillColor: '#FEB019'
+      }
       const options = {
           series: [
-          {
-            data: [
-              {
-                x: 'Term 1',
-                y: [
-                  new Date('2020-02-03').getTime(),
-                  new Date('2020-04-09').getTime()
-                ],
-                fillColor: '#008FFB'
-              },
-              {
-                x: 'Term 2',
-                y: [
-                  new Date('2020-04-27').getTime(),
-                  new Date('2020-07-03').getTime()
-                ],
-                fillColor: '#00E396'
-              },
-              {
-                x: 'Term 3',
-                y: [
-                  new Date('2020-07-20').getTime(),
-                  new Date('2020-09-25').getTime()
-                ],
-                fillColor: '#775DD0'
-              },
-              {
-                x: 'Term 4',
-                y: [
-                  new Date('2020-10-12').getTime(),
-                  new Date('2020-12-18').getTime()
-                ],
-                fillColor: '#FEB019'
+            {
+              data: []
+            }
+          ],
+            chart: {
+            height: 350,
+            type: 'rangeBar'
+          },
+          plotOptions: {
+            bar: {
+              horizontal: true,
+              distributed: true,
+              dataLabels: {
+                hideOverflowingLabels: false
               }
-            ]
-          }
-        ],
-          chart: {
-          height: 350,
-          type: 'rangeBar'
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
-            distributed: true,
-            dataLabels: {
-              hideOverflowingLabels: false
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            formatter: function(val, opts) {
+              const label = opts.w.globals.labels[opts.dataPointIndex]
+              const a = moment(val[0])
+              const b = moment(val[1])
+              const diff = b.diff(a, 'days')
+              return label + ': ' + diff + (diff > 1 ? ' days' : ' day')
+            },
+            style: {
+              colors: ['#f3f4f5', '#fff']
+            }
+          },
+          xaxis: {
+            type: 'datetime'
+          },
+          yaxis: {
+            show: false
+          },
+          grid: {
+            row: {
+              colors: ['#f3f4f5', '#fff'],
+              opacity: 1
             }
           }
-        },
-        dataLabels: {
-          enabled: true,
-          formatter: function(val, opts) {
-            const label = opts.w.globals.labels[opts.dataPointIndex]
-            const a = moment(val[0])
-            const b = moment(val[1])
-            const diff = b.diff(a, 'days')
-            return label + ': ' + diff + (diff > 1 ? ' days' : ' day')
-          },
-          style: {
-            colors: ['#f3f4f5', '#fff']
-          }
-        },
-        xaxis: {
-          type: 'datetime'
-        },
-        yaxis: {
-          show: false
-        },
-        grid: {
-          row: {
-            colors: ['#f3f4f5', '#fff'],
-            opacity: 1
-          }
-        }
         };
+        let onlyOneTerm = true
+        this.selectedTasks.map(task => {
+          if(task.term != '4') {
+            onlyOneTerm = false
+          }
+        })
+        if(onlyOneTerm) {
+            options.series[0].data.push(term4)
+          } else {
+            options.series[0].data.push(term1)
+            options.series[0].data.push(term2)
+            options.series[0].data.push(term3)
+            options.series[0].data.push(term4)
+          }
         const chart = new ApexCharts(document.querySelector("#timeLine"), options);
         chart.render();
     },
@@ -252,9 +279,6 @@ export default Vue.extend({
         responsive: [{
           breakpoint: 480,
           options: {
-            chart: {
-              width: 200
-            },
             legend: {
               position: 'bottom'
             }

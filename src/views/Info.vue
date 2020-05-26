@@ -15,7 +15,6 @@ import Vue from "vue";
 import { mdbContainer } from 'mdbvue';
 import infoPage from "@/components/infoPage.vue";
 import screen1 from "@/components/screen1.vue";
-// import screen2 from "@/components/screen2.vue";
 import screen3 from "@/components/screen3.vue";
 import screen4 from "@/components/screen4.vue";
 import screen5 from "@/components/screen5.vue";

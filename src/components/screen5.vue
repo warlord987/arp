@@ -1,13 +1,13 @@
 <template>
   <mdb-row class="justify-content-md-center align-items-center">
-    <mdb-col sm="7">
+    <mdb-col sm="12">
       <mdb-card wide class="center">
         <mdb-view gradient="peach" cascade>
-          <h2 class="card-header-title mb-3 font24">how many students do u teach for the tasks?</h2>
+          <h2 class="card-header-title mb-3 font24">how many students do you teach for the tasks?</h2>
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
           <mdb-card-text class="font21">
-              <mdb-input v-model="noOfStudnets" style="margin: 0px;" type="number" :min="0" outline/>
+              <mdb-input v-model="noOfStudnets" style="margin: 0px;" type="number" :min="1" outline/>
           </mdb-card-text>
           <a class="orange-text mt-1 d-flex">
             <h5 class="p-2" waves v-on:click="showPrevious"><mdb-icon icon="angle-double-left" />Previous</h5>
@@ -54,7 +54,7 @@ export default Vue.extend({
   },
   data () {
     return {
-      noOfStudnets: 0
+      noOfStudnets: 1
     }
   }
 });
