@@ -14,10 +14,21 @@
         </mdb-col>
       </mdb-row> -->
       <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
-        <mdb-col sm="10">
+        <mdb-col sm="6">
           <mdb-card>
             <mdb-card-body>
-              <mdb-card-title>Total Work done</mdb-card-title>
+              <mdb-card-title>Total Actual Work spread</mdb-card-title>
+              <hr/>
+              <mdb-card-text>
+                <div id="actualWork"></div>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
+        <mdb-col sm="6">
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>Total Expected Work spread</mdb-card-title>
               <hr/>
               <mdb-card-text>
                 <div id="pieChart"></div>
@@ -30,7 +41,7 @@
         <mdb-col sm="10">
           <mdb-card>
             <mdb-card-body>
-              <mdb-card-title>Expected vs actual hours</mdb-card-title>
+              <mdb-card-title>Expected vs actual minutes</mdb-card-title>
               <hr/>
               <mdb-card-text>
                 <mdb-card-text>
@@ -230,12 +241,35 @@ export default Vue.extend({
         const chart = new ApexCharts(document.querySelector("#timeLine"), options);
         chart.render();
     },
-    pieChart () {
+    actualWork () {
       const options = {
         series: this.selectedTasks.map(task => task.actualTime),
         labels: this.selectedTasks.map(task => task.name),
         chart: {
-          width: 800,
+          width: 550,
+          type: 'pie',
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      };
+      const chart = new ApexCharts(document.querySelector("#actualWork"), options);
+      chart.render();
+    },
+    expectedWork () {
+      const options = {
+        series: this.selectedTasks.map(task => parseInt(task.expectedHours+'')),
+        labels: this.selectedTasks.map(task => task.name),
+        chart: {
+          width: 550,
           type: 'pie',
         },
         responsive: [{
@@ -256,11 +290,11 @@ export default Vue.extend({
     negativeBar () {
       const options = {
           series: [{
-          name: 'Expected hours',
+          name: 'Expected minutes',
           data: this.selectedTasks.map(task => -task.expectedHours),
         },
         {
-          name: 'Actual Hours',
+          name: 'Actual minutes',
           data: this.selectedTasks.map(task => task.actualTime),
         }
         ],
@@ -292,8 +326,8 @@ export default Vue.extend({
           }
         },
         yaxis: {
-          min: this.selectedTasks.map(task => -task.expectedHours).sort()[0],
-          max: this.selectedTasks.map(task => task.actualTime).sort().reverse()[0],
+          min: this.selectedTasks.map(task => -task.expectedHours).sort(function(a, b){return a - b})[0],
+          max: this.selectedTasks.map(task => task.actualTime).sort(function(a, b){return a - b}).reverse()[0],
           title: {
             text: 'Selected Tasks',
           },
@@ -397,7 +431,8 @@ export default Vue.extend({
     this.setMeta()
     this.calculateTotalHours()
     this.comboCharts()
-    this.pieChart()
+    this.actualWork()
+    this.expectedWork()
     this.timeLine()
     this.negativeBar()
   }

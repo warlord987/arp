@@ -15,7 +15,7 @@
                     <div class="col-8 text-left">{{task.name}}</div>
                     <div class="col-4">
                       <span>
-                        <mdb-input class="col-12" v-model="task.timeValue"  style="margin: 0px; padding: 0px" type="number" :min="0" :max="10" outline/>&nbsp;{{task.unit}}
+                        <mdb-input class="col-12" v-model="task.timeValue"  style="margin: 0px; padding: 0px" type="number" :min="0" outline/>&nbsp;{{task.unit}}
                       </span>
                     </div>
                 </mdb-list-group-item>

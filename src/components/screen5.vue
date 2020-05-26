@@ -7,7 +7,7 @@
         </mdb-view>
         <mdb-card-body class="text-center" cascade>
           <mdb-card-text class="font21">
-              <mdb-input v-model="noOfStudnets" style="margin: 0px;" type="number" :min="0" :max="10" outline/>
+              <mdb-input v-model="noOfStudnets" style="margin: 0px;" type="number" :min="0" outline/>
           </mdb-card-text>
           <a class="orange-text mt-1 d-flex">
             <h5 class="p-2" waves v-on:click="showPrevious"><mdb-icon icon="angle-double-left" />Previous</h5>
