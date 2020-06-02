@@ -14,6 +14,32 @@
         </mdb-col>
       </mdb-row>
       <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
+        <mdb-col sm="12">
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>Practice chart for actual values</mdb-card-title>
+              <hr/>
+              <mdb-card-text>
+                <div id="practice"></div>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
+      </mdb-row>
+      <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
+        <mdb-col sm="12">
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>Principle chart for actual values</mdb-card-title>
+              <hr/>
+              <mdb-card-text>
+                <div id="principle"></div>
+              </mdb-card-text>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
+      </mdb-row>
+      <mdb-row style="margin-top: 10px;" class="justify-content-md-center align-items-center">
         <mdb-col sm="6">
           <mdb-card>
             <mdb-card-body>
@@ -147,6 +173,12 @@ export default Vue.extend({
               enabled: true
             }
           },
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'left',
+          showForSingleSeries: true,
+          show: true,
+        },
           responsive: [{
             breakpoint: 480,
             options: {
@@ -165,12 +197,164 @@ export default Vue.extend({
           xaxis: {
             type: 'categories',
             categories: [1,2,3,4,5,6,7],
+            title: {
+              text: 'NQS Values'
+            }
+          },
+          yaxis: {
+            title: {
+              text: 'Time in minutes'
+            }
           },
           fill: {
             opacity: 1
           }
         };
         const chart = new ApexCharts(document.querySelector("#combo"), options);
+        chart.render();
+    },
+    practiceCharts() {
+        const result = new Array(this.selectedTasks.length).fill(null).map(() => ({
+            name: "",
+            data: new Array(6).fill(0)
+          }));
+        for (let index = 1; index <= 6; index++) {
+          for (let taskIndex = 0; taskIndex < this.selectedTasks.length; taskIndex++) {
+            const element = this.selectedTasks[taskIndex];
+            result[taskIndex].name = element.name
+            if(element.practice == index){
+              result[taskIndex].data[index-1] = element.actualTime
+            } else if (element.practice == ''){
+              result[taskIndex].data[0] = element.actualTime
+            }
+          }
+        }
+
+        const options = {
+          series: [
+              ...result
+            ],
+          chart: {
+            type: 'bar',
+            height: 350,
+            stacked: true,
+            toolbar: {
+              show: true
+            },
+            zoom: {
+              enabled: true
+            }
+          },
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'left',
+          showForSingleSeries: true,
+          show: true,
+        },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0
+              }
+            }
+          }],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            },
+          },
+          xaxis: {
+            type: 'categories',
+            categories: [0,1,2,4,5,8],
+            title: {
+              text: 'Practice Values'
+            }
+          },
+          yaxis: {
+            title: {
+              text: 'Time in minutes'
+            }
+          },
+          fill: {
+            opacity: 1
+          }
+        };
+        const chart = new ApexCharts(document.querySelector("#practice"), options);
+        chart.render();
+    },
+    practicalCharts() {
+        const result = new Array(this.selectedTasks.length).fill(null).map(() => ({
+            name: "",
+            data: new Array(5).fill(0)
+          }));
+        for (let index = 1; index <= 5; index++) {
+          for (let taskIndex = 0; taskIndex < this.selectedTasks.length; taskIndex++) {
+            const element = this.selectedTasks[taskIndex];
+            result[taskIndex].name = element.name
+            if(element.principle == index){
+              result[taskIndex].data[index-1] = element.actualTime
+            } else if (element.principle == ''){
+              result[taskIndex].data[0] = element.actualTime
+            }
+          }
+        }
+
+        const options = {
+          series: [
+              ...result
+            ],
+          chart: {
+            type: 'bar',
+            height: 350,
+            stacked: true,
+            toolbar: {
+              show: true
+            },
+            zoom: {
+              enabled: true
+            }
+          },
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'left',
+          showForSingleSeries: true,
+          show: true,
+        },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0
+              }
+            }
+          }],
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            },
+          },
+          xaxis: {
+            type: 'categories',
+            categories: [0,1,2,3,5],
+            title: {
+              text: 'Practical Values'
+            }
+          },
+          yaxis: {
+            title: {
+              text: 'Time in minutes'
+            }
+          },
+          fill: {
+            opacity: 1
+          }
+        };
+        const chart = new ApexCharts(document.querySelector("#principle"), options);
         chart.render();
     },
     timeLine() {
@@ -276,14 +460,12 @@ export default Vue.extend({
           width: 550,
           type: 'pie',
         },
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'left',
+          showForSingleSeries: true,
+          show: true,
+        }
       };
       const chart = new ApexCharts(document.querySelector("#actualWork"), options);
       chart.render();
@@ -296,17 +478,12 @@ export default Vue.extend({
           width: 550,
           type: 'pie',
         },
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'left',
+          showForSingleSeries: true,
+          show: true,
+        }
       };
       const chart = new ApexCharts(document.querySelector("#pieChart"), options);
       chart.render();
@@ -454,6 +631,8 @@ export default Vue.extend({
   mounted() {
     this.setMeta()
     this.calculateTotalHours()
+    this.practiceCharts()
+    this.practicalCharts()
     this.comboCharts()
     this.actualWork()
     this.expectedWork()

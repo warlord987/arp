@@ -8,7 +8,7 @@ const state = {
       Kindergarten: {
         tasks: [
           {
-            name: "assess development needs of children",
+            name: "Assess development needs of children",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -22,7 +22,7 @@ const state = {
             isContract: 'C'
           },
         {
-            name: "create the required plans to meet children's development needs",
+            name: "Create the required plans to meet children's development needs",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -36,7 +36,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "teach children",
+            name: "Teach children",
             time: {
               value: '1',
               unit: 'hours/child/week',
@@ -50,7 +50,7 @@ const state = {
             isContract: 'C'
           },
         {
-            name: "create range of activities for improving children’s social and intellectual growth",
+            name: "Create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -64,7 +64,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "write transition statement",
+            name: "Write transition statement",
             time: {
               value: '1',
               unit: 'hours/child/year',
@@ -72,13 +72,13 @@ const state = {
             },
             frequency: 'per_child_per_year',
             term: '4',
-            practi8ce: '',
+            practice: '',
             principle: '',
             nqs: '1',
             isContract: 'N'
           },
         {
-            name: "discuss transition statement with parent",
+            name: "Discuss transition statement with parent",
             time: {
               value: '15',
               unit: 'minutes/child/year',
@@ -86,13 +86,13 @@ const state = {
             },
             frequency: 'per_child_per_year',
             term: '4',
-            practi8ce: '',
+            practice: '',
             princip2le: '',
             nqs: '1',
             isContract: 'N'
           },
         {
-            name: "check hazard and risk to maintain a safe and comfortable environment",
+            name: "Check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '30',
               unit: 'minutes/week',
@@ -106,7 +106,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "communicate with families (in person)",
+            name: "Communicate with families (in person)",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -120,7 +120,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "communicate with families (electronic)",
+            name: "Communicate with families (electronic)",
             time: {
               value: '30',
               unit: 'minutes/week',
@@ -134,7 +134,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "document children's development including portfolios and individual progress records",
+            name: "Document children's development including portfolios and individual progress records",
             time: {
               value: '10',
               unit: 'minutes/child/week',
@@ -148,7 +148,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "review and plan according to the early childhood guidelines and curriculum",
+            name: "Review and plan according to the early childhood guidelines and curriculum",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -162,7 +162,7 @@ const state = {
             isContract: 'N'
           },
         {
-            name: "participate in professional development",
+            name: "Participate in professional development",
             time: {
               value: '20',
               unit: 'hours/year',
@@ -180,7 +180,7 @@ const state = {
       ELC: {
         tasks: [
           {
-            name: "assess development needs of children",
+            name: "Assess development needs of children",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -194,7 +194,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create the required plans to meet children's development needs",
+            name: "Create the required plans to meet children's development needs",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -208,7 +208,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "teach children",
+            name: "Teach children",
             time: {
               value: '30',
               unit: 'hours/week',
@@ -222,7 +222,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create range of activities for improving children’s social and intellectual growth",
+            name: "Create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -236,7 +236,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "communicate with families",
+            name: "Communicate with families",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -250,7 +250,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "document children's development including portfolios and individual progress records",
+            name: "Document children's development including portfolios and individual progress records",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -264,7 +264,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "review and plan according to the early childhood guidelines and curriculum",
+            name: "Review and plan according to the early childhood guidelines and curriculum",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -278,7 +278,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "participate in professional development",
+            name: "Participate in professional development",
             time: {
               value: '20',
               unit: 'hours/year',
@@ -300,7 +300,7 @@ const state = {
       Kindergarten: {
         tasks: [
           {
-            name: "mentor other educators",
+            name: "Mentor other educators",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -313,7 +313,7 @@ const state = {
             nqs: '7',
             isContract: 'C'
           },          {
-            name: "observe interactions of educators with children",
+            name: "Observe interactions of educators with children",
             time: {
               value: '30',
               unit: 'minutes/week',
@@ -326,7 +326,7 @@ const state = {
             nqs: '7',
             isContract: 'C'
           },          {
-            name: "identify and participate in professional development opportunities",
+            name: "Identify and participate in professional development opportunities",
             time: {
               value: '1',
               unit: 'hours/term',
@@ -339,7 +339,7 @@ const state = {
             nqs: '7',
             isContract: 'N'
           },          {
-            name: "lead reflective discussions about practice",
+            name: "Lead reflective discussions about practice",
             time: {
               value: '0.5',
               unit: 'hours/week',
@@ -361,7 +361,7 @@ const state = {
       Kindergarten: {
         tasks: [
           {
-            name: "deliver curriculum to children individually or in small groups under the direction of the teacher or director",
+            name: "Deliver curriculum to children individually or in small groups under the direction of the teacher or director",
             time: {
               value: '5',
               unit: 'hours/week',
@@ -375,7 +375,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "perform administrative duties such as finances and records management",
+            name: "Perform administrative duties such as finances and records management",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -389,7 +389,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "organise resources for activities within the safety guidelines under the direction of the teacher",
+            name: "Organise resources for activities within the safety guidelines under the direction of the teacher",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -403,7 +403,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "discuss program implementation and evaluation with the teacher",
+            name: "Discuss program implementation and evaluation with the teacher",
             time: {
               value: '30',
               unit: 'minutes/week',
@@ -417,7 +417,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "help organise special events and children's work displays",
+            name: "Help organise special events and children's work displays",
             time: {
               value: '2',
               unit: 'hours/term',
@@ -435,7 +435,7 @@ const state = {
       Childcare: {
         tasks: [
           {
-            name: "assess development needs of children",
+            name: "Assess development needs of children",
             time: {
               value: '5',
               unit: 'minutes/child/day',
@@ -449,7 +449,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create the required plans to meet children's development needs",
+            name: "Create the required plans to meet children's development needs",
             time: {
               value: '5',
               unit: 'minutes/child/day',
@@ -463,7 +463,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "provide experiences to support children's play and learning",
+            name: "Provide experiences to support children's play and learning",
             time: {
               value: '8',
               unit: 'hours/day',
@@ -477,7 +477,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create range of activities for improving children’s social and intellectual growth",
+            name: "Create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
               unit: 'minutes/child/day',
@@ -491,7 +491,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "check hazard and risk to maintain a safe and comfortable environment",
+            name: "Check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '10',
               unit: 'minutes/day',
@@ -505,7 +505,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "communicate with families (in person)",
+            name: "Communicate with families (in person)",
             time: {
               value: '5',
               unit: 'minutes/child/day',
@@ -519,7 +519,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "provide care for babies and toddlers",
+            name: "Provide care for babies and toddlers",
             time: {
               value: '4',
               unit: 'hours/day',
@@ -533,7 +533,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "document children's development including portfolios and individual progress records",
+            name: "Document children's development including portfolios and individual progress records",
             time: {
               value: '5',
               unit: 'minutes/child/day',
@@ -547,7 +547,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "review and plan according to the early childhood guidelines and curriculum",
+            name: "Review and plan according to the early childhood guidelines and curriculum",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -561,7 +561,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "participate in professional development",
+            name: "Participate in professional development",
             time: {
               value: '10',
               unit: 'hours/year',
@@ -583,7 +583,7 @@ const state = {
       Kindergarten: {
         tasks: [
           {
-            name: "assess development needs of children",
+            name: "Assess development needs of children",
             time: {
               value: '5',
               unit: 'minutes/child/year',
@@ -597,7 +597,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create the required plans to meet children's development needs",
+            name: "Create the required plans to meet children's development needs",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -611,7 +611,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "teach children",
+            name: "Teach children",
             time: {
               value: '1',
               unit: 'hours/child/week',
@@ -625,7 +625,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "create range of activities for improving children’s social and intellectual growth",
+            name: "Create range of activities for improving children’s social and intellectual growth",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -639,7 +639,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "check hazard and risk to maintain a safe and comfortable environment",
+            name: "Check hazard and risk to maintain a safe and comfortable environment",
             time: {
               value: '15',
               unit: 'minutes/week',
@@ -653,7 +653,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "communicate with families (in person)",
+            name: "Communicate with families (in person)",
             time: {
               value: '5',
               unit: 'minutes/child/week',
@@ -667,7 +667,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "communicate with families (electronic)",
+            name: "Communicate with families (electronic)",
             time: {
               value: '30',
               unit: 'minutes/week',
@@ -681,7 +681,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "document children's development including portfolios and individual progress records",
+            name: "Document children's development including portfolios and individual progress records",
             time: {
               value: '10',
               unit: 'minutes/child/week',
@@ -695,7 +695,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "review and plan according to the early childhood guidelines and curriculum",
+            name: "Review and plan according to the early childhood guidelines and curriculum",
             time: {
               value: '1',
               unit: 'hours/week',
@@ -709,7 +709,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "participate in professional development",
+            name: "Participate in professional development",
             time: {
               value: '10',
               unit: 'hours/year',
@@ -731,7 +731,7 @@ const state = {
       Childcare: {
         tasks: [
           {
-            name: "provide care for babies and toddlers",
+            name: "Provide care for babies and toddlers",
             time: {
               value: '5.2',
               unit: 'hours/day',
@@ -745,7 +745,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "perform administrative duties such as filling out accident/incident reports",
+            name: "Perform administrative duties such as filling out accident/incident reports",
             time: {
               value: '5',
               unit: 'minutes/day',
@@ -759,7 +759,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "organise resources for activities within the safety guidelines under the direction of the teacher",
+            name: "Organise resources for activities within the safety guidelines under the direction of the teacher",
             time: {
               value: '5',
               unit: 'minutes/day',
@@ -773,7 +773,7 @@ const state = {
             isContract: 'N'
           },
           {
-            name: "provide experiences to support children's play and learning",
+            name: "Provide experiences to support children's play and learning",
             time: {
               value: '1.8',
               unit: 'hours/day',
@@ -787,7 +787,7 @@ const state = {
             isContract: 'C'
           },
           {
-            name: "help organise children's work displays",
+            name: "Help organise children's work displays",
             time: {
               value: '15',
               unit: 'minutes/day',

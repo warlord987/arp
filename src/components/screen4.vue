@@ -23,7 +23,7 @@
           </mdb-card-text>
           <a class="orange-text mt-1 d-flex">
             <h5 class="p-2" waves v-on:click="showPrevious"><mdb-icon icon="angle-double-left" />Previous</h5>
-            <div class="col-7"></div>
+            <div class="col-9"></div>
             <h5 class="p-2" waves v-on:click="showNext">Next <mdb-icon icon="angle-double-right" /></h5>
           </a>
         </mdb-card-body>
