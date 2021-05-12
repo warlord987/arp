@@ -11,7 +11,7 @@
   "dependencies": {
     "apexcharts": "^3.19.0",
     "bootstrap-vue": "^2.13.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "mdbvue": "6.7.1",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.11",
